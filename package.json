@@ -1,12 +1,12 @@
 {
-  "name": "meu-projeto",
+  "name": "teste",
   "version": "1.0.0",
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vite",              
-    "build": "vite build",     
-    "preview": "vite preview"   
+    "dev": "vite",
+    "build": "npx vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
