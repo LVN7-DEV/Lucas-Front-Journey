@@ -8,7 +8,7 @@ export default function Profile({ mode }) {
     const links = [
         { element: "Instagram", src: "https://www.instagram.com/lcsvn_" },
         { element: "GitHub", src: "https://github.com/LVN7-DEV" },
-        { element: "Linkedin", src: "https://www.linkedin.com/in/LucasVinícius" }
+        { element: "Linkedin", src: "https://www.linkedin.com/in/lucas-vin%C3%ADcius-271337389/" }
         // Removido: "Meu projeto"
     ];
 
@@ -35,7 +35,7 @@ export default function Profile({ mode }) {
                         <a href="https://www.instagram.com/lcsvn_" target="_blank" rel="noopener noreferrer">
                             <img src={ImgInstagram} alt="Logo Instagram" />
                         </a>
-                        <a href="https://www.linkedin.com/in/LucasVinícius" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/in/lucas-vin%C3%ADcius-271337389/" target="_blank" rel="noopener noreferrer">
                             <img src={ImgLinkedin} alt="Logo LinkedIn" />
                         </a>
                     </li>
