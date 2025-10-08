@@ -1,0 +1,13 @@
+:root {
+    --font-family: "roboto", sans-serif;
+
+    --orange: #ff6640;
+    --blue: #232287;
+    --purple: #140728;
+    --white: #E1E1E1;
+
+
+    --bg-variant01: linear-gradient(180deg, #ff6640 70%, #232287 100%);
+    --bg-variant02: linear-gradient(180deg, #232287 75%, #ff6640 100%);
+    
+}
