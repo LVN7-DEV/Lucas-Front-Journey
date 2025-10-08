@@ -1,54 +1,53 @@
-import { useEffect,useState } from "react";
-
-import ImageSwitch from "../assets/Switch.svg";
+import { useEffect, useState } from "react";
 import ImgProfile from "../assets/profile.jpeg";
-
 import "../styles/style.css";
-
 import Profile from "./Profile";
 
 export default function Header() {
-    const [mode, setMode] = useState(false);
+    const [mode, setMode] = useState(false); // false = light, true = dark
 
-    useEffect(()=> {
-        const bg = mode ? "var(--bg-variant02)" : "var(--bg-variant01)";
-        document.body.style.setProperty("background", bg);
+    useEffect(() => {
+        // Aplica as classes de tema no body
+        if (mode) {
+            document.body.classList.add('dark-theme');
+            document.body.classList.remove('light-theme');
+        } else {
+            document.body.classList.add('light-theme');
+            document.body.classList.remove('dark-theme');
+        }
     }, [mode]);
 
     return (
         <>
-        <header className="Profile-header">
-            {/* Foto de perfil */}
-            <img className="img-profile" src={ImgProfile} alt="Foto de Perfil"/>
+            <header className="Profile-header">
+                {/* Foto de perfil */}
+                <img className="img-profile" src={ImgProfile} alt="Foto de Perfil"/>
 
+                {/* Nome e username */}
+                <span className="profile-name">Lucas Vinícius</span>
+                <span className="profile-username">@lucasvinicius</span>
 
-            {/* Nome e username */}
-            <span>Lucas Vinícius</span>
-            <span>@lucasvinicius</span>
+                {/* Botão Dark Mode */}
+                <div className="dark-mode-toggle">
+                    <input 
+                        type="checkbox" 
+                        id="darkmode-toggle" 
+                        className="toggle-checkbox"
+                        checked={mode}
+                        onChange={() => setMode(prev => !prev)}
+                    />
+                    <label htmlFor="darkmode-toggle" className="toggle-label">
+                        <div className="toggle-moon">🌙</div>
+                        <div className="toggle-sun">☀️</div>
+                        <div className="toggle-ball"></div>
+                    </label>
+                    <span className="toggle-text">
+                        {mode ? "Modo Escuro" : "Modo Claro"}
+                    </span>
+                </div>
+            </header>
 
-            {/* Botão de alternar modo */}
-            <button
-                onClick={() => setMode(prev => !prev)}
-                className="btn-switch"
-                aria-label="Alternar tema"
-                >
-                    
-                <img
-                    className="modeImage"
-                    src={ImageSwitch}
-                    alt="Botão Dark Mode"
-                    style={
-                        mode
-                        ? { filter: "invert(1)", transform: "scaleX(-1)"}
-                        : { filter: "invert(0)", transform: "scaleX(1)"}
-                    }
-                />
-            </button>
-        </header>
-
-        {/* Component que lista links e redes sociais */}
-        <Profile mode={mode} />
-    </>
+            <Profile mode={mode} />
+        </>
     );
 }
-
